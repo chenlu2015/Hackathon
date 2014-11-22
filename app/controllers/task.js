@@ -1,5 +1,4 @@
-var taskApp = angular.module('taskApp', ['taskModel', 'ui.bootstrap']);
-
+var taskApp = angular.module('taskApp', ['taskModel', 'mobile-angular-ui']);
 
 // Index: http://localhost/views/task/index.html
 
@@ -10,6 +9,13 @@ taskApp.controller('IndexCtrl', function ($scope, taskRestangular) {
     webView = new steroids.views.WebView("/views/task/show.html?id="+id);
     steroids.layers.push(webView);
   };
+
+  $scope.direct = function(url) {
+    webView = new steroids.views.WebView("/views/task/"+ url + ".html");
+    steroids.layers.push(webView);
+  };
+
+
 
   // Fetch all objects from the local JSON (see app/models/task.js)
   taskRestangular.all('task').getList().then(function(tasks){
