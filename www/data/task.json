@@ -1,0 +1,22 @@
+[
+  {
+    "task_id": 1,
+    "name": "Buy Chicken",
+    "difficulty": "easy",
+    "comments": "Go to Jewel Osco to buy ten pounds of chicken",
+    ""
+  },
+
+  {
+    "task_id": 2,
+    "name": "Clean Up",
+    "difficulty": "medium"
+  },
+
+  {
+    "task_id": 3,
+    "name": "Risk Management",
+    "difficulty": "hard"
+  }
+
+]

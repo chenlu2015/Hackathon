@@ -1,0 +1,11 @@
+
+<div ng-app="taskApp">
+
+  <div ng-controller="IndexCtrl">
+      <ul class="list">
+        <li class="item" ng-click="open(task.task_id)" ng-repeat="task in tasks">
+          {{ task.name }}
+        </li>
+      </ul>
+    </div>
+</div>
