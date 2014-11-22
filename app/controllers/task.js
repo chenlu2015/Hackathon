@@ -1,4 +1,4 @@
-var taskApp = angular.module('taskApp', ['taskModel']);
+var taskApp = angular.module('taskApp', ['taskModel', 'ui.bootstrap']);
 
 
 // Index: http://localhost/views/task/index.html
