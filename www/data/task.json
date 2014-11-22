@@ -3,24 +3,21 @@
     "task_id": 1,
     "name": "Buy Chicken",
     "difficulty": "easy",
-    "comments": "Go to Jewel Osco to buy ten pounds of chicken",
-    "status": "not done"
+    "comments": "Go to Jewel Osco to buy ten pounds of chicken"
+
   },
 
   {
     "task_id": 2,
     "name": "Clean Up",
-    "difficulty": "medium",
-    "comments": "Clean up the kitchen ",
-    "status": "not done"
+    "difficulty": "medium"
+
   },
 
   {
     "task_id": 3,
     "name": "Risk Management",
-    "difficulty": "hard",
-    "comments": "We need two risk managers to make sure everyone is safe",
-    "status": "not done"
+    "difficulty": "hard"
   }
 
 ]
