@@ -17,6 +17,6 @@
     "underscore": "1.5.1",
     "restangular": "1.4.0",
     "angular-touch": "~1.3.3",
-
+    "ionic": "driftyco/ionic-bower#~0.9.26"
   }
 }
