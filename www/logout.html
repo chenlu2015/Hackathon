@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf8">
+  <title>Taskr</title>
+
+  <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
+  <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/task.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
+
+  <script src="http://localhost/cordova.js"></script>
+  <script src="/components/steroids-js/steroids.js"></script>
+
+  <script src="http://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.js"></script>
+  <script src="/components/angular-touch/angular-touch.min.js"></script> 
+  <script src="/components/lodash/dist/lodash.min.js"></script>
+  <script src="/components/restangular/dist/restangular.min.js"></script>
+
+  <script src="/components/firebase/firebase.js"></script>
+  <script src="/components/angularfire/dist/angularfire.min.js"></script>
+
+  
+  <script src="/models/task.js"></script>
+  <script src="/app.js"></script>
+  <script src="/services/user.js"></script>
+  <script src="/services/auth.js"></script>
+  <script src="/controllers/auth.js"></script>
+
+</head>
+
+<body ng-app="myApp" class="content">
+
+<div ng-controller="AuthCtrl" >
+
+Are you sure you would like to log out?
+
+<button ng-click="logout()">Log Out</button><button ng-click="goback()">Go Back</button>
+</div>
+
+
+
+</body>
+</html>

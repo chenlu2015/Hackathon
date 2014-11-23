@@ -1,7 +1,7 @@
 var app = angular.module('myApp', ['ngTouch', 'taskModel', 'firebase', 'ionic']);
 
 
-app.constant('FIREBASE_URL', 'https://taskrhackathon.firebaseIO.com/');
+app.constant('FIREBASE_URL', 'https://pushr.firebaseIO.com/');
 
 // app.config(function ($routeProvider) {
 // $routeProvider

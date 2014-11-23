@@ -3,51 +3,56 @@
     "task_id": 1,
     "name": "Buy Food",
     "difficulty": "easy",
-    "comments": "Go to Jewel Osco to buy ten pounds of chicken"
+    "comments": "Go to Jewel Osco to buy ten pounds of chicken",
+    "status":0
 
   },
 
   {
     "task_id": 2,
     "name": "Clean Up",
-    "difficulty": "medium"
+    "difficulty": "medium",
+    "owner_id": "2",
+    "status":0
 
   },
 
   {
     "task_id": 3,
     "name": "Risk Management",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "owner_id": "2",
+    "status":1
   },
 
   {
     "task_id": 4,
     "name": "Massage Ted Wu",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "status":0
   },
 
   {
     "task_id": 5,
     "name": "Kiss Ted Wu",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "owner_id": "2",
+    "status":1
   },
 
 
   {
     "task_id": 6,
     "name": "Have Sex with Ted Wu",
-    "difficulty": "hard"
+    "difficulty": "hard",
+    "status":0
   },
 
   {
     "task_id": 7,
     "name": "Make an application",
-    "difficulty": "hard"
-  },
-
-
-
-
-
+    "difficulty": "hard",
+    "status":0
+  }
 
 ]

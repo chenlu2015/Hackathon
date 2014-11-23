@@ -3,15 +3,15 @@
 <div ng-controller="TaskCtrl">
   <div class="tabs-striped tabs-top tabs-background-positive tabs-light">
     <div class="tabs">
-      <a class="tab-item active" ng-click="showPage = 1">
-        <i class="icon ion-clipboard"></i>
+      <a class="tab-item" ng-class="{'active': showPage==1}" ng-click="showPage = 1">
+        <i class="icon ion-android-contact"></i>
           My Tasks
       </a>
-      <a class="tab-item" ng-click="showPage = 2">
-        <i class="icon ion-folder"></i>
+      <a class="tab-item" ng-class="{'active': showPage==2}" ng-click="showPage = 2">
+        <i class="icon ion-android-friends"></i>
           Event Tasks
       </a>
-      <a class = "tab-item" ng-click = "showPage = 3">
+      <a class = "tab-item"  ng-class="{'active': showPage==3}" ng-click = "showPage = 3">
       <i class = "icon ion-gear-b"></i>
         Settings
       </a>
@@ -19,7 +19,6 @@
   </div> 
 
   <div ng-show="showPage == 1">
-    <h1>My Tasks</h1>
       
       <ion-header-bar class="bar-positive" style="margin-top:48px">
       <div class="buttons">
@@ -33,15 +32,56 @@
       </div>
     </ion-header-bar>
 
-    <ion-content>
+    <ion-content style="margin-top:48px">
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 
+        <ion-item ng-repeat="item in myitems |filter: ownerID" 
+                  item="item"
+                  href="#/item/{{item.task_id}}">
+                  {{item.name}} | {{item.difficulty}}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveMyItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+
+
+  </div>
+  <div ng-show="showPage == 2">
+      
+      <ion-header-bar class="bar-positive" style="margin-top:48px">
+      <div class="buttons">
+        <button class="button button-icon icon ion-minus-circled" 
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      <h1 class="title">Event Tasks</h1>
+      <button class="button"
+          ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+            Reorder
+          </button>
+      </div>
+    </ion-header-bar>
+
+    <ion-content style="margin-top:48px">
 
       <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
 
         <ion-item ng-repeat="item in items" 
                   item="item"
-                  href="#/item/{{item.id}}">
-          Item {{ item.id }}
+                  href="#/item/{{item.task_id}}">
+                  {{item.name}} | {{item.difficulty}}
           <ion-delete-button class="ion-minus-circled" 
                              ng-click="onItemDelete(item)">
           </ion-delete-button>
@@ -60,25 +100,27 @@
 
     </ion-content>
 
-
-
   </div>
-  <div ng-show="showPage == 2">Event Tasks</div>
 
   <div class="list" ng-show = "showPage == 3">
+    <ion-header-bar class="bar-positive" style="margin-top:-1px;">
+      <div class="buttons">
+      <h1 class="title">Settings</h1>
+      </div>
+    </ion-header-bar> 
 
-    <a class="item item-icon-left" href="#">
-      <i class="icon ion-email"></i>
-      Log Out
-    </a>
+    <div style="margin-top:48px">
+      <a class="item item-icon-left" ng-click="logout()">
+        <i class="icon ion-ios7-locked"></i>
+        Log Out
+      </a>
 
-
-    <a class="item item-icon-left" href="#">
-      <i class="icon ion-person-stalker"></i>
-      Friends
-      <span class="badge badge-assertive">0</span>
-    </a>
-
+      <a class="item item-icon-left" href="#">
+        <i class="icon ion-ios7-paper-outline"></i>
+        Analytics
+        <span class="badge badge-assertive">3</span>
+      </a>
+    </div>
   </div>
 </div>
 

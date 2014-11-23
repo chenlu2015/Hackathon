@@ -11,7 +11,6 @@ app.factory('Auth',
             if (error === null) {
               $rootScope.registerMessage =  "User created successfully";
               Auth.login(user);
-
               return;
             } else {
               $rootScope.registerMessage =  error;
@@ -37,14 +36,16 @@ app.factory('Auth',
             }
           } else if (authData) {
             // user authenticated with Firebase
-            console.log("Logged In! User ID: " + authData.uid);
-            var webView = new steroids.views.WebView("/views/task/index.html?user="+authData.uid);
+            console.log("Logged In! User ID: " + authData.uid.substring(12));
+            var webView = new steroids.views.WebView("/views/task/index.html?user="+authData.uid.substring(12));
             steroids.layers.push(webView);
           }
         });
       },
       logout: function () {
         ref.unauth();
+        steroids.layers.pop();
+        steroids.layers.pop();
       }
     };
  
@@ -52,9 +53,6 @@ app.factory('Auth',
       return Auth.signedIn() != null;
     };
 
-    $rootScope.logout = function() {
-      return Auth.logout();
-    }
  
     return Auth;
   });

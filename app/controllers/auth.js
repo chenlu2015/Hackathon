@@ -3,9 +3,8 @@
 app.controller('AuthCtrl',
   function ($scope, $location, Auth, User, $rootScope) {
 
-     // Native navigation
-      steroids.view.navigationBar.show("TaskR");
-      steroids.view.setBackgroundColor("#FFFFFF");
+    // Native navigation
+    steroids.view.setBackgroundColor("#FFFFFF");
 
     $scope.login = function () {
       Auth.login($scope.user);
@@ -19,11 +18,11 @@ app.controller('AuthCtrl',
       Auth.logout();
     }
 
-    $scope.show = 'register';
+    $scope.show = 'login';
 
-    $scope.tasks = function() {
-      var webView = new steroids.views.WebView("/views/task/index.html");
-      steroids.layers.push(webView);
+    $scope.goback = function() {
+     steroids.layers.pop();
     }
+
 
   });

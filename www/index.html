@@ -14,7 +14,6 @@
 
   <script src="http://code.ionicframework.com/1.0.0-beta.13/js/ionic.bundle.js"></script>
   <script src="/components/angular-touch/angular-touch.min.js"></script> 
-
   <script src="/components/lodash/dist/lodash.min.js"></script>
   <script src="/components/restangular/dist/restangular.min.js"></script>
 
@@ -31,6 +30,12 @@
 </head>
 <body ng-app="myApp" class="content">
 
+  <div class="list card">
+    <div class="item item-image">
+      <img src="/taskr.jpg">
+    </div>
+  </div>  
+
 <div ng-controller="AuthCtrl" >
 
   <div> {{registerMessage}}</div>
@@ -38,6 +43,12 @@
     <div class="list list-inset">
       <label class="item item-input">
         <input type="email" placeholder="Email" ng-model="user.email">
+      </label>
+       <label class="item item-input">
+        <input type="text" placeholder="First Name" ng-model="user.fn">
+      </label>
+       <label class="item item-input">
+        <input type="text" placeholder="Last Name" ng-model="user.ln">
       </label>
       <label class="item item-input">
         <input type="password" placeholder="Password" ng-model="user.password">
