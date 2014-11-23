@@ -1,8 +1,6 @@
-var taskApp = angular.module('taskApp', ['taskModel', 'mobile-angular-ui']);
-
 // Index: http://localhost/views/task/index.html
 
-taskApp.controller('IndexCtrl', function ($scope, taskRestangular) {
+app.controller('TaskCtrl', function ($scope, taskRestangular) {
 
   // Helper function for opening new webviews
   $scope.open = function(id) {
@@ -11,8 +9,6 @@ taskApp.controller('IndexCtrl', function ($scope, taskRestangular) {
   };
 
   $scope.myTasks = true; 
-
-
 
 
   // Fetch all objects from the local JSON (see app/models/task.js)
@@ -28,7 +24,7 @@ taskApp.controller('IndexCtrl', function ($scope, taskRestangular) {
 
 // Show: http://localhost/views/task/show.html?id=<id>
 
-taskApp.controller('ShowCtrl', function ($scope, $filter, taskRestangular) {
+app.controller('ShowCtrl', function ($scope, $filter, taskRestangular) {
 
   // Fetch all objects from the local JSON (see app/models/task.js)
   taskRestangular.all('task').getList().then( function(tasks) {

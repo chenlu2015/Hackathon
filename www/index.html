@@ -2,32 +2,42 @@
 <html>
 <head>
   <meta charset="utf8">
-  <title>Steroids App</title>
+  <title>Taskr</title>
 
   <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
-  <link rel="stylesheet" href="/stylesheets/task.css" />
 
   <script src="http://localhost/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
 
   <script src="/components/angular/angular.min.js"></script>
-  <script src="/components/angular-bootstrap/ui-bootstrap.min.js"></script>
-  <script src="/components/mobile-angular-ui/dist/js/mobile-angular-ui.min.js"></script>
   <script src="/components/angular-touch/angular-touch.min.js"></script>
 
   <script src="/components/lodash/dist/lodash.min.js"></script>
   <script src="/components/restangular/dist/restangular.min.js"></script>
 
-  <script src="/app.js"></script>
   <script src="/models/task.js"></script>
-  <script src="/controllers/task.js"></script>
-
-
+  <script src="/app.js"></script>
 </head>
 <body ng-app="myApp" class="content">
 
-  <%= yield.view %>
+<div ng-controller="LoginCtrl">
+  <div class="list list-inset">
+    <label class="item item-input">
+      <input type="text" placeholder="Username">
+    </label>
+    <label class="item item-input">
+      <input type="text" placeholder="Password">
+    </label>
+  </div>
+  <button class="button button-full button-positive">
+   Login
+  </button>
+
+  <button ng-click="tasks()">(temp) Go To Tasks Page</button>
+</div>
+
+
 
 </body>
 </html>
