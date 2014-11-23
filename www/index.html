@@ -40,7 +40,6 @@
 
   <button ng-click="logout()" ng-show="signedIn()">Logout</button>
   <div> {{registerMessage}}</div>
-<div >
   <form ng-submit="register(user)" name="form"  ng-show="show=='register'">  
     <div class="list list-inset">
       <label class="item item-input">
@@ -51,10 +50,8 @@
       </label>
     </div>
     
-    <button class="button button-full button-positive">
-      <input type ="submit" value="Register" >Register </input>
-    </button>
-     <button ng-click="show='login'"> Login </button>
+      <input class="button button-full button-block button-positive" type ="submit" value="Register" > </input>
+     Already have an account? <a href="" ng-click="show='login'"> Login</a> here.
   </form>
 
   <form ng-submit="login(user)" name="form" ng-show="show=='login'">  
@@ -67,21 +64,12 @@
       </label>
     </div>
     
-    <button class="button button-full button-positive">
-      <input type ="submit" value="Login" >Login </input>
-    </button>
 
-    <button ng-click="show='register'"> Register</button>
+      <input class="button button-full button-block button-positive" type ="submit" value="Login" ></input>
+    Don't have an account yet? <a href="" ng-click="show='register'"> Register</a> Here
   </form>
-</div>
 
 
-
-</div>
-
-<div ng-controller="AuthCtrl">
-
-  {{user}}
 
 </div>
 

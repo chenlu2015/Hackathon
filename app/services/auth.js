@@ -11,8 +11,7 @@ app.factory('Auth',
             if (error === null) {
               $rootScope.registerMessage =  "User created successfully";
               Auth.login(user);
-              var webView = new steroids.views.WebView("/views/task/index.html");
-              steroids.layers.push(webView);
+
               return;
             } else {
               $rootScope.registerMessage =  error;
@@ -39,6 +38,8 @@ app.factory('Auth',
           } else if (authData) {
             // user authenticated with Firebase
             console.log("Logged In! User ID: " + authData.uid);
+            var webView = new steroids.views.WebView("/views/task/index.html?user="+authData.uid);
+            steroids.layers.push(webView);
           }
         });
       },
@@ -50,6 +51,10 @@ app.factory('Auth',
     $rootScope.signedIn = function () {
       return Auth.signedIn() != null;
     };
+
+    $rootScope.logout = function() {
+      return Auth.logout();
+    }
  
     return Auth;
   });
