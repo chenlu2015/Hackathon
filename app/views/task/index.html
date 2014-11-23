@@ -16,10 +16,53 @@
         Settings
       </a>
     </div>
-  </div>
+  </div> 
 
-<div class = "tabs-view">
-  <div ng-show="showPage == 1">My Tasks</div>
+  <div ng-show="showPage == 1">
+    <h1>My Tasks</h1>
+      
+      <ion-header-bar class="bar-positive">
+      <div class="buttons">
+        <button class="button button-icon icon ion-minus-circled" 
+          ng-click="data.showDelete = !data.showDelete; data.showReorder = false"></button>
+      <h1 class="title">My Tasks</h1>
+      <button class="button"
+          ng-click="data.showDelete = false; data.showReorder = !data.showReorder">
+            Reorder
+          </button>
+      </div>
+    </ion-header-bar>
+
+    <ion-content>
+
+
+      <ion-list show-delete="data.showDelete" show-reorder="data.showReorder">
+
+        <ion-item ng-repeat="item in items" 
+                  item="item"
+                  href="#/item/{{item.id}}">
+          Item {{ item.id }}
+          <ion-delete-button class="ion-minus-circled" 
+                             ng-click="onItemDelete(item)">
+          </ion-delete-button>
+          <ion-option-button class="button-assertive"
+                             ng-click="edit(item)">
+            Edit
+          </ion-option-button>
+          <ion-option-button class="button-calm"
+                             ng-click="share(item)">
+            Share
+          </ion-option-button>
+          <ion-reorder-button class="ion-navicon" on-reorder="moveItem(item, $fromIndex, $toIndex)"></ion-reorder-button>
+        </ion-item>
+
+      </ion-list>
+
+    </ion-content>
+
+
+
+  </div>
   <div ng-show="showPage == 2">Event Tasks</div>
 
   <div class="list" ng-show = "showPage == 3">
@@ -29,19 +72,6 @@
       Log Out
     </a>
 
-    <!-- <a class="item item-icon-left item-icon-right" href="#">
-      <i class="icon ion-chatbubble-working"></i>
-      Call Ma
-      <i class="icon ion-ios7-telephone-outline"></i>
-    </a>
-
-    <a class="item item-icon-left" href="#">
-      <i class="icon ion-mic-a"></i>
-      Record album
-      <span class="item-note">
-        Grammy
-      </span>
-    </a> -->
 
     <a class="item item-icon-left" href="#">
       <i class="icon ion-person-stalker"></i>
