@@ -6,6 +6,8 @@
 
   <link rel="stylesheet" href="/vendor/ionic/css/ionic.css" />
   <link rel="stylesheet" href="/stylesheets/application.css" />
+  <link rel="stylesheet" type="text/css" href="/stylesheets/task.css">
+  <link rel="stylesheet" type="text/css" href="/stylesheets/login.css">
 
   <script src="http://localhost/cordova.js"></script>
   <script src="/components/steroids-js/steroids.js"></script>
@@ -38,7 +40,6 @@
 
 <div ng-controller="AuthCtrl" >
 
-  <button ng-click="logout()" ng-show="signedIn()">Logout</button>
   <div> {{registerMessage}}</div>
   <form ng-submit="register(user)" name="form"  ng-show="show=='register'">  
     <div class="list list-inset">

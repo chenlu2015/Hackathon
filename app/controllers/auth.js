@@ -4,7 +4,7 @@ app.controller('AuthCtrl',
   function ($scope, $location, Auth, User, $rootScope) {
 
      // Native navigation
-      steroids.view.navigationBar.show("User Login");
+      steroids.view.navigationBar.show("TaskR");
       steroids.view.setBackgroundColor("#FFFFFF");
 
     $scope.login = function () {
