@@ -10,10 +10,8 @@ taskApp.controller('IndexCtrl', function ($scope, taskRestangular) {
     steroids.layers.push(webView);
   };
 
-  $scope.direct = function(url) {
-    webView = new steroids.views.WebView("/views/task/"+ url + ".html");
-    steroids.layers.push(webView);
-  };
+  $scope.myTasks = true; 
+
 
 
 

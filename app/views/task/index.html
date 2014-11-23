@@ -1,18 +1,23 @@
 
 <div ng-app="taskApp">
+<div ng-controller="IndexCtrl">
+	  <div class="tabs-striped tabs-top tabs-background-positive tabs-light">
+	    <div class="tabs">
+	      <a class="tab-item active" ng-click="myTasks = true">
+	        <i class="icon ion-home"></i>
+	        	My Tasks
+	      </a>
+	      <a class="tab-item" ng-click="myTasks = false">
+	        <i class="icon ion-star"></i>
+	        	Event Tasks
+	      </a>
 
-  <div class="tabs-striped tabs-top tabs-background-positive tabs-light" ng-controller="IndexCtrl">
-    <div class="tabs">
-      <a class="tab-item active" ng-click="direct('mytask')">
-        <i class="icon ion-home"></i>
-        	My Tasks
-      </a>
-      <a class="tab-item" ng-click="direct('eventTask')">
-        <i class="icon ion-star"></i>
-        	Event Tasks
-      </a>
+	    </div>
+	  </div>
 
-    </div>
-  </div>
-
+	<div>
+	  <div ng-show="myTasks">My Tasks</div>
+	  <div ng-show="!myTasks">Event Tasks</div>
+	 </div>
+	</div>
 </div>
