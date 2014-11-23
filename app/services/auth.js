@@ -19,7 +19,23 @@ app.factory('Auth',
         // return auth.user !== null;
       },
       login: function (user) {
-        // return auth.$login('password', user);
+         return ref.authWithPassword({
+  email    : 'bobtony@firebase.com',
+  password : 'invalid-password'
+}, function(err, authData) {
+  if (err) {
+    switch (err.code) {
+      case "INVALID_EMAIL":
+      // handle an invalid email
+      case "INVALID_PASSWORD":
+      // handle an invalid password
+      default:
+    }
+  } else if (authData) {
+    // user authenticated with Firebase
+    console.log("Logged In! User ID: " + authData.uid);
+  }
+});
       },
       logout: function () {
         // auth.$logout();

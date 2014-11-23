@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ngTouch', 'taskModel', 'firebase']);
+var app = angular.module('myApp', ['ngTouch', 'taskModel', 'firebase', 'ionic']);
 
 
 app.constant('FIREBASE_URL', 'https://taskrhackathon.firebaseIO.com/');
