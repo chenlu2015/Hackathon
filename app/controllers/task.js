@@ -30,6 +30,10 @@ app.controller('TaskCtrl', function ($scope, $filter, taskRestangular, $rootScop
     var webView = new steroids.views.WebView("/logout.html");
     steroids.layers.push(webView);
   };
+  $scope.showanalytics = function() {
+    var webView = new steroids.views.WebView("/views/task/analytics.html");
+    steroids.layers.push(webView);
+  }
 
   $scope.showPage = 1; 
 
@@ -48,15 +52,12 @@ app.controller('TaskCtrl', function ($scope, $filter, taskRestangular, $rootScop
 
 // Show: http://localhost/views/task/show.html?id=<id>
 
-app.controller('ShowCtrl', function ($scope, $filter, taskRestangular) {
+app.controller('AnalyticCtrl', function ($scope, $filter, taskRestangular) {
 
-  // Fetch all objects from the local JSON (see app/models/task.js)
-  taskRestangular.all('task').getList().then( function(tasks) {
-    // Then select the one based on the view's id query parameter
-    $scope.task = $filter('filter')(tasks, {owner_id: steroids.view.params['id']})[0];
+  taskRestangular.all('task').getList().then(function(tasks){
+    $scope.items = tasks;
+    $scope.myitems = $filter('filter')(tasks, {owner_id: steroids.view.params['user']});
   });
 
-  // -- Native navigation
-  steroids.view.navigationBar.show("task " + steroids.view.params.id );
 
 });

@@ -32,11 +32,16 @@
 <body ng-app="myApp" class="content">
 
 <div ng-controller="AuthCtrl" >
+<br><br><br><br><br><br>
+  <div class=" card">
+    <div class="item item-text-wrap">Are you sure you would like to log out?</div>
+  </div>
 
-Are you sure you would like to log out?
+  <button class="button button-assertive" ng-click="logout()" style="margin-left:37px;">Log Out</button><button class="button button-balanced" ng-click="goback()" style="margin-left:50px;">Go Back</button>
+</div>  
 
-<button ng-click="logout()">Log Out</button><button ng-click="goback()">Go Back</button>
-</div>
+
+</body>
 
 
 
