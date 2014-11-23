@@ -29,16 +29,16 @@ app.constant('FIREBASE_URL', 'https://taskrhackathon.firebaseIO.com/');
 //     redirectTo: '/'
 //   });
 // });
-app.controller('LoginCtrl', function ($scope) {
+// app.controller('LoginCtrl', function ($scope) {
 
-  // Native navigation
-  steroids.view.navigationBar.show("User Login");
-  steroids.view.setBackgroundColor("#FFFFFF");
+//   // Native navigation
+//   steroids.view.navigationBar.show("User Login");
+//   steroids.view.setBackgroundColor("#FFFFFF");
 
-  $scope.tasks = function() {
-    webView = new steroids.views.WebView("/views/task/index.html");
-    steroids.layers.push(webView);
-  }
+//   $scope.tasks = function() {
+//     webView = new steroids.views.WebView("/views/task/index.html");
+//     steroids.layers.push(webView);
+//   }
 
-});
+// });
 

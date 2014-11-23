@@ -7,16 +7,21 @@ app.factory('Auth',
  
     var Auth = {
       register: function (user) {
-            return ref.createUser({email: user.email, password: user.password}, function(error) {
+           ref.createUser({email: user.email, password: user.password}, function(error) {
             if (error === null) {
-              console.log("User created successfully");
+              $rootScope.registerMessage =  "User created successfully";
+              Auth.login(user);
+              var webView = new steroids.views.WebView("/views/task/index.html");
+              steroids.layers.push(webView);
+              return;
             } else {
-              console.log("Error creating user:", error);
+              $rootScope.registerMessage =  error;
+              return;
             }
         });
       },
       signedIn: function () {
-        // return auth.user !== null;
+       return ref.getAuth();
       },
       login: function (user) {
           ref.authWithPassword({
@@ -38,12 +43,12 @@ app.factory('Auth',
         });
       },
       logout: function () {
-        // auth.$logout();
+        ref.unauth();
       }
     };
  
     $rootScope.signedIn = function () {
-      return Auth.signedIn();
+      return Auth.signedIn() != null;
     };
  
     return Auth;

@@ -1,37 +1,25 @@
 'use strict';
  
 app.controller('AuthCtrl',
-  function ($scope, $location, Auth, User) {
+  function ($scope, $location, Auth, User, $rootScope) {
 
      // Native navigation
       steroids.view.navigationBar.show("User Login");
       steroids.view.setBackgroundColor("#FFFFFF");
 
-
-
-    // if (Auth.signedIn()) {
-    //   $location.path('/');
-    // }
-
     $scope.login = function () {
-      Auth.login($scope.user).then( function () {
-        $location.path('/');
-      }, function(error) {
-        $scope.error = error.toString();
-
-      });
+      Auth.login($scope.user);
     };
 
     $scope.register = function () {
-      Auth.register($scope.user).then(function (authUser) {
-        User.create(authUser, $scope.user.username);
-        $location.path('/login');
-
-      }, function (error) {
-        $scope.error=error.toString();
-      });
+      Auth.register($scope.user);
     };
 
+    $scope.logout = function(){
+      Auth.logout();
+    }
+
+    $scope.show = 'register';
 
     $scope.tasks = function() {
       var webView = new steroids.views.WebView("/views/task/index.html");
