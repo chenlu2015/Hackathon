@@ -4,18 +4,18 @@
 	  <div class="tabs-striped tabs-top tabs-background-positive tabs-light">
 	    <div class="tabs">
 	      <a class="tab-item active" ng-click="myTasks = true">
-	        <i class="icon ion-home"></i>
+	        <i class="icon ion-clipboard"></i>
 	        	My Tasks
 	      </a>
 	      <a class="tab-item" ng-click="myTasks = false">
-	        <i class="icon ion-star"></i>
+	        <i class="icon ion-folder"></i>
 	        	Event Tasks
 	      </a>
 
 	    </div>
 	  </div>
 
-	<div>
+	<div class = "tabs-view">
 	  <div ng-show="myTasks">My Tasks</div>
 	  <div ng-show="!myTasks">Event Tasks</div>
 	 </div>

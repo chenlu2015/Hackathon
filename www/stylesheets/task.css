@@ -1,0 +1,10 @@
+.tabs-top>.tabs{
+	top:0px;
+	position:relative;
+	border-bottom:1px solid black;
+	
+}
+
+.tabs-view{
+	padding:50px 70px;
+}
