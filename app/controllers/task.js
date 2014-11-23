@@ -8,7 +8,7 @@ app.controller('TaskCtrl', function ($scope, taskRestangular) {
     steroids.layers.push(webView);
   };
 
-  $scope.myTasks = true; 
+  $scope.myTasks = 1; 
 
 
   // Fetch all objects from the local JSON (see app/models/task.js)
